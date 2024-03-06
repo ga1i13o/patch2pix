@@ -71,7 +71,7 @@ class Conv4d(_ConvNd):
             super(Conv4d, self).__init__(
                 in_channels, out_channels, kernel_size, stride, padding, dilation,
                 False, _quadruple(0), groups, bias)   
-        elif '1.' in torch.__version__:
+        elif '1.' in torch.__version__ or '2.' in torch.__version__:
             super(Conv4d, self).__init__(
                 in_channels, out_channels, kernel_size, stride, padding, dilation,
                 False, _quadruple(0), groups, bias, padding_mode='zeros')
